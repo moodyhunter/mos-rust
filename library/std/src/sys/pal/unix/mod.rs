@@ -142,6 +142,7 @@ pub unsafe fn init(argc: isize, argv: *const *const u8, sigpipe: u8) {
             target_os = "l4re",
             target_os = "horizon",
             target_os = "vita",
+            target_os = "mos",
         )))]
         {
             use crate::sys::os::errno;

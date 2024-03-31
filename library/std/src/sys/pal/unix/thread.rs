@@ -130,6 +130,13 @@ impl Thread {
         }
     }
 
+    #[cfg(target_os = "mos")]
+    pub fn set_name(name: &CStr) {
+        unsafe {
+            libc::pthread_setname_np(libc::pthread_self(), name.as_ptr());
+        }
+    }
+
     #[cfg(target_os = "linux")]
     pub fn set_name(name: &CStr) {
         const TASK_COMM_LEN: usize = 16;

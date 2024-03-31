@@ -67,6 +67,8 @@ mod platform {
     pub use crate::os::linux::*;
     #[cfg(target_os = "macos")]
     pub use crate::os::macos::*;
+    #[cfg(target_os = "mos")]
+    pub use crate::os::mos::*;
     #[cfg(target_os = "netbsd")]
     pub use crate::os::netbsd::*;
     #[cfg(target_os = "nto")]

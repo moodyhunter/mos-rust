@@ -98,6 +98,8 @@ const EXTRA_CHECK_CFGS: &[(Option<Mode>, &str, Option<&[&'static str]>)] = &[
     (Some(Mode::ToolStd), "target_os", Some(&["visionos"])),
     /* Extra names used by dependencies */
     // FIXME: Used by serde_json, but we should not be triggering on external dependencies.
+    // #[cfg(bootstrap)] mos
+    (Some(Mode::Std), "target_os", Some(&["mos"])),
     (Some(Mode::Rustc), "no_btreemap_remove_entry", None),
     (Some(Mode::ToolRustc), "no_btreemap_remove_entry", None),
     // FIXME: Used by crossbeam-utils, but we should not be triggering on external dependencies.
